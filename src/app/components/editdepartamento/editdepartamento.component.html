@@ -1,0 +1,18 @@
+<div>
+    <h1>Editar Departamento</h1><br>
+    <form #editForm="ngForm">
+        <label>ID:</label>
+        <input type="number" #cajaid name="cajaid" value="{{departamento.idDepartamento}}" disabled
+            class="form-control">
+        <label>Nombre:</label>
+        <input type="text" #cajanombre name="cajanombre" value="{{departamento.nombre}}" class="form-control">
+        <label>Localidad:</label>
+        <input type="text" #cajalocalidad name="cajalocalidad" value="{{departamento.localidad}}" class="form-control">
+        <br>
+        <div class="text-end">
+            <button class="btn btn-outline-success" (click)="updateDepartamento()">
+                Editar
+            </button>
+        </div>
+    </form>
+</div>

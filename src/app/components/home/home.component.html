@@ -1,0 +1,24 @@
+<div>
+    <h1>Departamentos</h1> <br>
+    <img src="./../../../assets/images/Loading.gif" *ngIf="!departamentos">
+    <table class="table table-striped text-center" *ngIf="departamentos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Localidad</th>
+                <th>Modificar</th>
+                <th>Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dept of departamentos">
+                <td>{{dept.idDepartamento}}</td>
+                <td>{{dept.nombre}}</td>
+                <td>{{dept.localidad}}</td>
+                <td><a [routerLink]="['/editar/', dept.idDepartamento, dept.nombre, dept.localidad]" class="btn btn-outline-warning">Editar</a></td>
+                <td><button (click)="deleteDepartamento(dept.idDepartamento)" class="btn btn-outline-danger">Borrar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
